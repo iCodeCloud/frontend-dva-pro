@@ -16,14 +16,20 @@ const Routers = ({history, app}) => {
       path: '/',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
-          cb(null, require('./routes/IndexPage'));
-        }, 'indexpage');
+          registerModel(app, require('./models/app'));
+          cb(null, require('./routes/App'));
+        }, 'app');
       },
+      // getComponent(nextState, cb) {
+      //   require.ensure([], (require) => {
+      //     cb(null, require('./routes/Dashboard'));
+      //   }, 'dashboard');
+      // },
       // getIndexRoute(nextState, cb) {
       //   require.ensure([], (require) => {
-      //     registerModel(app, require('./models/user'));
-      //     cb(null, require('./routes/User'));
-      //   }, 'User');
+      //     registerModel(app, require('./models/login'));
+      //     cb(null, require('./routes/Login'));
+      //   }, 'Login');
       // },
       childRoutes: [
         {

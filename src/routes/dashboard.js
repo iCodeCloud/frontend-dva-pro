@@ -3,15 +3,13 @@ import {connect} from 'dva';
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
 const {SubMenu} = Menu;
 const {Header, Content, Sider} = Layout;
-import styles from './IndexPage.css';
 import {Link} from 'dva/router';
 
 @connect((state) => {
-  return {...state.indexPage};
+  return {...state.dashboard};
 })
 
-export default class IndexPage extends React.Component {
-
+export default class Dashboard extends React.Component {
   render = () => {
     const {children} = this.props;
     return (
@@ -65,6 +63,6 @@ export default class IndexPage extends React.Component {
           </Layout>
         </Layout>
       </div>
-    )
+    );
   }
 }
