@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import UserListTable from './UserListTable';
+import UserListTable from './list/index';
 
 @connect((state) => {
   return {...state.user};

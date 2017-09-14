@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'dva';
-import Login from './Login'
-import Dashboard from './Dashboard'
-import './App.less';
+import Login from './login/index'
+import Dashboard from './dashboard/index'
+import './index.less';
 
 @connect((state) => {
   return {...state.app};
@@ -10,8 +10,8 @@ import './App.less';
 
 export default class App extends React.Component {
   render = () => {
-    const {children} = this.props;
-    if (true) {
+    const {children, isLogin} = this.props;
+    if (!isLogin) {
       return (
         <Login />
       )

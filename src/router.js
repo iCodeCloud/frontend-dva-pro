@@ -17,7 +17,7 @@ const Routers = ({history, app}) => {
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
           registerModel(app, require('./models/app'));
-          cb(null, require('./routes/App'));
+          cb(null, require('./routes/app/'));
         }, 'app');
       },
       // getComponent(nextState, cb) {
@@ -39,7 +39,7 @@ const Routers = ({history, app}) => {
           getComponent(nextState, cb) {
             require.ensure([], (require) => {
               registerModel(app, require('./models/user'));
-              cb(null, require('./routes/User'));
+              cb(null, require('./routes/user/'));
             }, 'User');
           },
         },
@@ -50,7 +50,7 @@ const Routers = ({history, app}) => {
           getComponent(nextState, cb) {
             require.ensure([], (require) => {
               registerModel(app, require('./models/log'));
-              cb(null, require('./routes/Log'));
+              cb(null, require('./routes/log/index'));
             }, 'Log');
           },
         },
